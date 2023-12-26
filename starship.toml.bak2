@@ -2,20 +2,20 @@
 
 # Custom format
 format = """
-[╭─](#6F00BF)\
-[](#6F00BF)\
+[╭─](#8C21D9)\
+[](#8C21D9)\
 $os\
 $username\
 $conda\
-[](bg:#4000C0 fg:#6F00BF)\
+[](bg:#5E21D9 fg:#8C21D9)\
 $directory\
-[](fg:#4000C0 bg:#291CBF)\
+[](fg:#5E21D9 bg:#3021D9)\
 $git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
 $git_status\
-[](fg:#291CBF bg:#215ED9)\
+[](fg:#3021D9 bg:#215ED9)\
 $nodejs\
 $java\
 $php\
@@ -33,9 +33,9 @@ $memory_usage\
 $time\
 [](fg:#1d2230)\
 $line_break\
-[│](#621798)\
+[│](#8C21D9)\
 $line_break\
-[╰───────](#621798)\
+[╰───────](#8C21D9)\
 $character"""
 
 "$schema" = "https://starship.rs/config-schema.json"
@@ -47,26 +47,26 @@ add_newline = true
 symbol = " "
 
 [os]
-style = "bg:#6F00BF fg:#0090FF"
 disabled = false
 format = "[$symbol ]($style)"
+style = "bg:#8C21D9 fg:#0090FF"
 symbols.Windows = ""
 
 [username]
-format = "[$user ]($style)"
-style_user = "bg:#6F00BF fg:#0090FF"
-style_root = "bg:#6F00BF fg:#FFAE00"
 show_always = true
+style_user = "bg:#8C21D9 fg:#0090FF"
+style_root = "bg:#8C21D9 fg:#FFAE00"
+format = "[$user ]($style)"
 disabled = false
 
 [conda]
 format = "[\\($environment\\) ]($style)"
-style = "bg:#6F00BF fg:#0090FF"
 ignore_base = false
+style = "bg:#8C21D9 fg:#2A007F"
 
 [directory]
+style = "fg:#0090FF bg:#5E21D9"
 format = "[ $path ]($style)"
-style = "fg:#0090FF bg:#4000C0"
 truncation_length = 5
 truncation_symbol = "…/"
 
@@ -77,37 +77,37 @@ truncation_symbol = "…/"
 "Pictures" = " "
 
 [git_branch]
-format = "[ $symbol $branch(: $remote_branch)]($style)"
-style = "fg:#00B4FF bg:#291CBF"
 symbol = ""
+style = "bg:#3021D9"
+format = "[[ $symbol $branch(: $remote_branch)](fg:#00B4FF bg:#3021D9)]($style)"
 always_show_remote = true
 
 [git_commit]
-format = "[\\($hash$tag\\)]($style)"
-style = "fg:#00B4FF bg:#291CBF"
+format = "[[\\($hash$tag\\)](fg:#00B4FF bg:#3021D9)]($style)"
+style = "bg:#3021D9"
 commit_hash_length = 7
 only_detached = false
 
 [git_state]
 format = "[\\($state( $progress_current of $progress_total)\\)]($style) "
-style = "bg:#291CBF"
-rebase = "REBASING"
+rebase =	"REBASING"
 merge = "MERGING"
 revert = "REVERTING"
 cherry_pick = "[🍒 PICKING](bold red)"
 bisect = "BISECTING"
 am = "AM"
 am_or_rebase = "AM/REBASE"
+style = "bg:#3021D9"
 
 [git_metrics]
 format = "[ +$added]($added_style)[ -$deleted]($deleted_style)"
-added_style = "fg:#21DA21 bg:#291CBF"
-deleted_style = "fg:#DA2121 bg:#291CBF"
+added_style = "fg:#21DA21 bg:#3021D9"
+deleted_style = "fg:#DA2121 bg:#3021D9"
 disabled = false
 
 [git_status]
-format = "[ / ($all_status$ahead_behind )]($style)"
-style = "fg:#DCD9FF bg:#291CBF"
+style = "bg:#3021D9"
+format = "[[ / ($all_status$ahead_behind )](#DCD9FF bg:#3021D9)]($style)"
 conflicted = "="
 ahead = "⇡ ${count}"
 behind = "⇣ ${count}"
@@ -122,52 +122,52 @@ deleted = "✘"
 ignore_submodules = false
 
 [nodejs]
-format = "[ $symbol ($version) ]($style)"
-style = "fg:#DCD9FF bg:#215ED9"
 symbol = ""
+style = "bg:#215ED9"
+format = "[[ $symbol ($version) ](fg:#DCD9FF bg:#215ED9)]($style)"
 
 [python]
-format = "[ ${symbol}${pyenv_prefix}( ${version} )(\\($virtualenv\\) )]($style)"
-style = "fg:#DCD9FF bg:#215ED9"
+style = "bg:#215ED9"
+format = "[[ ${symbol}${pyenv_prefix}( ${version} )(\\($virtualenv\\) )](fg:#DCD9FF bg:#215ED9)]($style)"
 symbol = ""
 
 [rust]
-format = "[ $symbol ($version) ]($style)"
-style = "fg:#DCD9FF bg:#215ED9"
 symbol = ""
+style = "bg:#215ED9"
+format = "[[ $symbol ($version) ](fg:#DCD9FF bg:#215ED9)]($style)"
 
 [golang]
-format = "[ $symbol ($version) ]($style)"
-style = "fg:#DCD9FF bg:#215ED9"
 symbol = ""
+style = "bg:#215ED9"
+format = "[[ $symbol ($version) ](fg:#DCD9FF bg:#215ED9)]($style)"
 
 [php]
-format = "[ $symbol ($version) ]($style)"
-style = "fg:#DCD9FF bg:#215ED9"
 symbol = ""
+style = "bg:#215ED9"
+format = "[[ $symbol ($version) ](fg:#DCD9FF bg:#215ED9)]($style)"
 
 [jobs]
-format = "[$symbol]($style)"
-style = "bold red"
 symbol = ""
+style = "bold red"
 number_threshold = 1
+format = "[$symbol]($style)"
 
 [cmd_duration]
-format = "[ $duration |]($style)"
-style = "fg:#6E21D9 bg:#1d2230"
 min_time = 0
+format = "[ $duration |](fg:#6E21D9 bg:#1d2230)($style)"
+style = "bg:#1d2230"
 
 [memory_usage]
-format = "[ RAM $ram - SWAP $swap |]($style)"
-style = "fg:#8C21D9 bg:#1d2230"
+format = "[[ RAM $ram - SWAP $swap |](fg:#8C21D9 bg:#1d2230)]($style)"
 disabled = false
+style = "bg:#1d2230"
 threshold = -1
 
 [time]
-format = "[  $time ]($style)"
-style = "fg:#AB21D9 bg:#1d2230"
 disabled = false
 time_format = "%R" # Hour:Minute Format
+style = "bg:#1d2230"
+format = "[[  $time ](fg:#AB21D9 bg:#1d2230)]($style)"
 
 [character]
 success_symbol = "[❯❯](#00ff00)"
