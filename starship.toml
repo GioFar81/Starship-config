@@ -41,7 +41,7 @@ $character"""
 "$schema" = "https://starship.rs/config-schema.json"
 
 # Add a newline before each prompts
-add_newline = true 
+add_newline = true
 
 [fill]
 symbol = " "
@@ -85,7 +85,7 @@ always_show_remote = true
 [git_commit]
 format = "[\\($hash$tag\\)]($style)"
 style = "fg:#00B4FF bg:#291CBF"
-commit_hash_length = 7
+commit_hash_length = 8
 only_detached = false
 
 [git_state]
