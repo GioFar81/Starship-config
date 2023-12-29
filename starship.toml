@@ -2,20 +2,21 @@
 
 # Custom format
 format = """
-[╭─](#6F00BF)\
-[](#6F00BF)\
+[╭─](#8C21D9)\
+[](#8C21D9)\
 $os\
+$shell\
 $username\
 $conda\
-[](bg:#4000C0 fg:#6F00BF)\
+[](bg:#5E21D9 fg:#8C21D9)\
 $directory\
-[](fg:#4000C0 bg:#291CBF)\
+[](fg:#5E21D9 bg:#3021D9)\
 $git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
 $git_status\
-[](fg:#291CBF bg:#215ED9)\
+[](fg:#3021D9 bg:#215ED9)\
 $nodejs\
 $java\
 $php\
@@ -33,40 +34,47 @@ $memory_usage\
 $time\
 [](fg:#1d2230)\
 $line_break\
-[│](#621798)\
+[│](#8C21D9)\
 $line_break\
-[╰───────](#621798)\
+[╰───────](#8C21D9)\
 $character"""
 
 "$schema" = "https://starship.rs/config-schema.json"
 
-# Add a newline before each prompts
+# Add a newline before each prompt
 add_newline = true
 
 [fill]
 symbol = " "
 
 [os]
-style = "bg:#6F00BF fg:#0090FF"
-disabled = false
 format = "[$symbol ]($style)"
+style = "bg:#8C21D9 fg:#131826"
+disabled = false
 symbols.Windows = ""
+
+[shell]
+format = "[ $indicator ]($style)"
+style = "bg:#8C21D9 fg:#131826"
+cmd_indicator = " CMD"
+powershell_indicator = "󰨊 PSH"
+disabled = false
 
 [username]
 format = "[$user ]($style)"
-style_user = "bg:#6F00BF fg:#0090FF"
-style_root = "bg:#6F00BF fg:#FFAE00"
+style_user = "bg:#8C21D9 fg:#131826"
+style_root = "bg:#8C21D9 fg:#FFAE00"
 show_always = true
 disabled = false
 
 [conda]
 format = "[\\($environment\\) ]($style)"
-style = "bg:#6F00BF fg:#0090FF"
+style = "bg:#8C21D9 fg:#131826"
 ignore_base = false
 
 [directory]
 format = "[ $path ]($style)"
-style = "fg:#0090FF bg:#4000C0"
+style = "bg:#5E21D9 fg:#131826"
 truncation_length = 5
 truncation_symbol = "…/"
 
@@ -78,19 +86,19 @@ truncation_symbol = "…/"
 
 [git_branch]
 format = "[ $symbol $branch(: $remote_branch)]($style)"
-style = "fg:#00B4FF bg:#291CBF"
+style = "fg:#00B4FF bg:#3021D9"
 symbol = ""
 always_show_remote = true
 
 [git_commit]
 format = "[\\($hash$tag\\)]($style)"
-style = "fg:#00B4FF bg:#291CBF"
+style = "fg:#00B4FF bg:#3021D9"
 commit_hash_length = 8
 only_detached = false
 
 [git_state]
 format = "[\\($state( $progress_current of $progress_total)\\)]($style) "
-style = "bg:#291CBF"
+style = "bg:#3021D9"
 rebase = "REBASING"
 merge = "MERGING"
 revert = "REVERTING"
@@ -101,24 +109,24 @@ am_or_rebase = "AM/REBASE"
 
 [git_metrics]
 format = "[ +$added]($added_style)[ -$deleted]($deleted_style)"
-added_style = "fg:#21DA21 bg:#291CBF"
-deleted_style = "fg:#DA2121 bg:#291CBF"
+added_style = "fg:#21DA21 bg:#3021D9"
+deleted_style = "fg:#DA2121 bg:#3021D9"
 disabled = false
 
 [git_status]
 format = "[ / ($all_status$ahead_behind )]($style)"
-style = "fg:#DCD9FF bg:#291CBF"
-conflicted = "="
-ahead = "⇡ ${count}"
-behind = "⇣ ${count}"
-diverged = "⇕ ${ahead_count}⇣${behind_count}"
-up_to_date = "✓"
-untracked = "?"
-stashed = "$"
-modified = "!"
+style = "fg:#DCD9FF bg:#3021D9"
+conflicted = ""
+ahead = " ${count}"
+behind = " ${count}"
+diverged = "[ ${ahead_count} ${behind_count}](bg:#3021D9)"
+up_to_date = ""
+untracked = ""
+stashed = ""
+modified = ""
 staged = "[+\\($count\\)](green)"
-renamed = "»"
-deleted = "✘"
+renamed = ""
+deleted = ""
 ignore_submodules = false
 
 [nodejs]
@@ -170,6 +178,6 @@ disabled = false
 time_format = "%R" # Hour:Minute Format
 
 [character]
-success_symbol = "[❯❯](#00ff00)"
-error_symbol = "[❯❯](#ff0000)"
-vicmd_symbol = "[❯❯](#00ff00)"
+success_symbol = "[](#00ff00)"
+error_symbol = "[](#ff0000)"
+vicmd_symbol = "[](#00ff00)"
