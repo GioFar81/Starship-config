@@ -154,6 +154,11 @@ format = "[ $symbol ($version) ]($style)"
 style = "fg:#DCD9FF bg:#215ED9"
 symbol = ""
 
+[package]
+format = "[ $symbol ($version) ]($style)"
+style = "fg:#DCD9FF bg:#215ED9"
+symbol = "📦"
+
 [jobs]
 format = "[$symbol]($style)"
 style = "bold red"

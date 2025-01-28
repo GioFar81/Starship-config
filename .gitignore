@@ -17,3 +17,6 @@
 /configstore/update-notifier-npm.json
 /.idea/vcs.xml
 /.idea/watcherTasks.xml
+/.idea/.name
+/.idea/git_toolbox_blame.xml
+/configstore/snyk.json.lock
